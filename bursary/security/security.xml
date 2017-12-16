@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id = "patient_book_user_rule" model="ir.rule">
+            <field name="name">Patient Booking only owner</field>
+            <field name="model_id" ref="model_patient_book" />
+            <field name="domain_force">[('create_uid', '=', user.id)]
+            </field>
+            <field name="groups" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+    </data>
+</openerp>
+
+
